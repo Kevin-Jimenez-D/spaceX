@@ -5,10 +5,11 @@ export const getAllImgMis = async()=>{
     let res = await (await fetch("https://api.spacexdata.com/v3/launches")).json();
 
     //Ese link da muchos datos repetidos, por lo tanto se hace map
-    //EN el JSON, se accede en el siguiente orden "links"->"mission_patch" y "mission_patch_small" y retorna esos datos 
+    //EN el JSON, se accede en el siguiente orden "links"->"mission_patch" y "mission_patch_small" y retorna esos datos, se eligió esas 2 porque sí, era libre cual tomar y que sean imágenes
     let img = res.map(element =>{
         let {mission_patch:img, mission_patch_small:img_small} = element.links;
         return {img, img_small};
     })
+    //Trae el elemento img que dentro tiene "mission_patch" y "mission_patch_small"
     return img;
 }

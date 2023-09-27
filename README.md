@@ -16,6 +16,8 @@
 
 **Code** : `200 OK`
 
+Asi se veria en la consola al abrir index.html
+
 ```json
 [    
 	{
